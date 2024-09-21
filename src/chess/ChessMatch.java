@@ -13,7 +13,7 @@ public class ChessMatch {
 		initialSetup();
 	}
 
-	
+	//Bring pieces from board pieces to chess pieces
 	public ChessPiece[][] getPieces(){
 		ChessPiece[][]mat = new ChessPiece[board.getRows()][board.getColumns()];
 		for(int i=0;i<board.getRows();i++) {
