@@ -26,15 +26,21 @@ public class UI {
 	}
 	
 	public static void printMatch(ChessMatch chessMatch, List<ChessPiece>capturedPieces) {
+		printCapturedPieces(capturedPieces);
 		printBoard(chessMatch.getPieces());
 		System.out.println();
 		System.out.println("Turn: "+ chessMatch.getTurn());
 		System.out.println("Waiting player: "+ chessMatch.getCurrentPlayer());
-		printCapturedPieces(capturedPieces);
-		if(chessMatch.getCheck()) {
-			System.out.println("CHECK");
+		if(!chessMatch.getCheckMate()) {
+			if(chessMatch.getCheck()) {
+				System.out.println("CHECK");
+			}
+			System.out.println();
 		}
-		System.out.println();
+		else {
+			System.out.println("CHECKMATE");
+			System.out.println("Winner: "+ chessMatch.getCurrentPlayer());
+		}
 	}
 	public static void printMatch(ChessMatch chessMatch, boolean[][]possibleMoves) {
 		printBoard(chessMatch.getPieces(),possibleMoves);
