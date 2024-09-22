@@ -22,6 +22,7 @@ public class UI {
 			System.out.println();
 		}
 		System.out.print("  a b c d e f g h");
+		System.out.println();
 	}
 	
 	public static void printMatch(ChessMatch chessMatch, List<ChessPiece>capturedPieces) {
@@ -30,6 +31,9 @@ public class UI {
 		System.out.println("Turn: "+ chessMatch.getTurn());
 		System.out.println("Waiting player: "+ chessMatch.getCurrentPlayer());
 		printCapturedPieces(capturedPieces);
+		if(chessMatch.getCheck()) {
+			System.out.println("CHECK");
+		}
 		System.out.println();
 	}
 	public static void printMatch(ChessMatch chessMatch, boolean[][]possibleMoves) {
