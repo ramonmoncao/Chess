@@ -42,11 +42,14 @@ public class UI {
 			System.out.println("Winner: "+ chessMatch.getCurrentPlayer());
 		}
 	}
-	public static void printMatch(ChessMatch chessMatch, boolean[][]possibleMoves) {
+	public static void printMatch(ChessMatch chessMatch, boolean[][]possibleMoves,List<ChessPiece>capturedPieces) {
+		printCapturedPieces(capturedPieces);
 		printBoard(chessMatch.getPieces(),possibleMoves);
+		System.out.println();
 		System.out.println();
 		System.out.println("Turn: "+ chessMatch.getTurn());
 		System.out.println("Waiting player: "+ chessMatch.getCurrentPlayer());
+		System.out.println();
 	}
 	public static void printBoard(ChessPiece[][] pieces,boolean[][]possibleMoves) {
 		for(int i =0;i<pieces.length;i++) {

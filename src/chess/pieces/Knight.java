@@ -14,6 +14,7 @@ public class Knight extends ChessPiece{
 	public String toString() {
 		return "N";
 	}
+
 	private boolean canMove(Position position) {
 		ChessPiece piece =(ChessPiece) getBoard().piece(position);
 		return piece == null || piece.getColor() != getColor();
@@ -34,10 +35,10 @@ public class Knight extends ChessPiece{
 			mat[p.getRow()][p.getColumn()]= true;
 		}
 		
-			p.setValues(position.getRow()-2, position.getColumn() + 1);
-			if(getBoard().positionExists(p) && canMove(p)) {
-				mat[p.getRow()][p.getColumn()]= true;
-			}
+		p.setValues(position.getRow()-2, position.getColumn() + 1);
+		if(getBoard().positionExists(p) && canMove(p)) {
+			mat[p.getRow()][p.getColumn()]= true;
+		}
 		
 		p.setValues(position.getRow()-1, position.getColumn() + 2);
 		if(getBoard().positionExists(p) && canMove(p)) {

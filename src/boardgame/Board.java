@@ -53,7 +53,7 @@ public class Board {
 	
 		return piece(position) != null; 
 	}
-	public Piece reomvePiece(Position position) {
+	public Piece removePiece(Position position) {
 		if(!positionExists(position)) {
 			throw new BoardException("Position not on the board. ");
 		}
